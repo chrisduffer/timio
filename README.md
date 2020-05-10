@@ -14,7 +14,7 @@ Content is not actually stored on the disks. Swapping the disk just changes the 
 
 ## Directory structure
 At the top level there at 7 directories:
-
+```
 L00
 L01
 L02
@@ -22,10 +22,11 @@ L03
 L04
 L05
 L06
+```
 
 ### L00
 L00 seems to contain some common files:
-
+```
 YE.a18
 Disc.a18
 L0009S01.a18
@@ -41,26 +42,28 @@ L0009S10.a18
 L0009S11.a18
 L0009S12.a18
 WEL.a18
+```
 
 ### L0X
 The L0X directories are the language specific files. They contain a load of files named using the following standard:
 
+```
 LXXYYYYY.a18
-XX - Language ID
-YYYYY - Content ID
+XX      Language ID
+YYYYY   Content ID
+```
 
-e.g. E:\L01\L0100C01.a18
-Language 01 - English
-Content 00C01
+e.g. E:\L01\L0100C01.a18 is for language 01 (English) content 00C01.
 
 These are the language IDs:
-
+```
 01 - English
 02 - Spanish
 03 - French
 04 - German
 05 - Dutch
 06 - Chinese
+```
 
 ## Content
 When changing the language the, the Timio will announce the one selected. I assumed this came from the L00 directory, but after ~~breaking~~ modifying the directory structure, it seems to come from one of the LXXYYYYY.a18 files.

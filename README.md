@@ -1,6 +1,6 @@
 # Timio
 ## Background
-Timio is an educational audio and music player for kids. It consists of a battery powered player and 20 disks with content such as nursery rhymes, games and lullabies. The content is provided in 6 languages. English, Spanish, French, German, Dutch, Chinese. More info is available at [timio.co](https://timio.co/).
+Timio is an educational audio and music player for kids. It consists of a battery powered player and 20 disks with content such as nursery rhymes, games and lullabies. The content is provided in 6 languages (8 in updated versions and SD cards). English, Spanish, French, German, Dutch, Chinese, Italian, Portuguese. More info is available at [timio.co](https://timio.co/).
 
 To change the language you need to remove the disk and hold the language selection button. This is great until you realise it's the first thing a toddler will do. So my son ends up listening to nursery rhymes in a language he has no idea about and loses interest in is new toy. I wondered if I could modify the Timio to only made some languages available.
 
@@ -63,6 +63,8 @@ These are the language IDs:
 04 - German
 05 - Dutch
 06 - Chinese
+07 - Italian
+08 - Portuguese
 ```
 
 ## Content
@@ -81,7 +83,10 @@ Since the file naming has been identified, we can replace the languages we don't
 
 ### To replace all with English
 With SD mounted to E:\ and backup of the Timio files in C:\temp\timio
-
+```
+robocopy e: C:\temp\timio /E
+```
+Replace all languages with English files
 ```powershell
 foreach ($id in (2..6)) {
     mkdir "e:\L0$id\";
@@ -95,14 +100,14 @@ When changing language now the Timio will only use English.
 ### To replace with only English and Spanish
 In this case I replace alternate languages with English and Spanish. This way cycling through the languages with switch between the 2.
 ```powershell
-foreach ($id in (1, 3, 5)) {
+foreach ($id in (1, 3, 5, 7)) {
     mkdir "e:\L0$id\";
     Get-ChildItem C:\temp\timio\L01\ | %{
         cp  $_.fullname "e:\L0$id\$($_.name -replace '^L01', "L0$id")"
     }
 }
 
-foreach ($id in (2, 4, 6)) {
+foreach ($id in (2, 4, 6, 8)) {
     mkdir "e:\L0$id\";
     Get-ChildItem C:\temp\timio\L02\ | %{
         cp  $_.fullname "e:\L0$id\$($_.name -replace '^L02', "L0$id")"

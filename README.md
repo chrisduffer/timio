@@ -21,7 +21,7 @@ Content is not actually stored on the disks. Swapping the disk just changes the 
       0000220 242   a   W  \0 242   a   W  \0   G   P 005  \0  \0  \0 001  \0
       0000230 377 377  \0  \0 002   Z
       ```
-* All other files on are card are `.a18` sound data files. The audio data format is a GeneralPlus "`a1800`" encoding specialized for playback on these chips.
+* All other files on the card are `.a18` sound data files. The audio data format is a GeneralPlus "`a1800`" encoding specialized for playback on these chips.
     * `.a18` format audio can be produced via the GeneralPlus [G+ Gadget developer tools](https://web.archive.org/web/20231205035201/https://www.generalplus.com/1LVlangLNx3SVq9SNservice_n_support_d) Audio Batch Converter.
 
 ## Directory structure

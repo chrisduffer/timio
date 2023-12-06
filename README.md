@@ -568,6 +568,8 @@ foreach ($id in (2, 4, 6, 8)) {
 ```
 
 ## Next Steps
-* I have no idea what format the .a18 are. I'd like to find this out and see if content can be modified.
-* I'd like work out how the content ID is linked to the disks. 
-* Can L0X directories be removed or added?
+* [x] ~~I have no idea what format the .a18 are. I'd like to find this out and see if content can be modified.~~
+    * [X] TIMIO will indeed play a different sound, when a new `.a18` is copied into a `L0X/` directory and renamed to replace an existing file (e.g.: making the Tamborine icon on Instruments disc play the Tuba sound, making an entire language play the same sound for all button presses by replacing the data content of all files in an `LOX/` directory). 👍
+    * [ ] Verify that new, custom sounds be encoded as `.a18`  using GeneralPlus G+ Gadget tools.
+* [ ] I'd like work out how the content ID is linked to the disks. 
+* [ ] Can L0X directories be removed or added?

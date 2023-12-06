@@ -2,10 +2,10 @@
 ## Background
 Timio is an educational audio and music player for kids. It consists of a battery powered player and 20 disks with content such as nursery rhymes, games and lullabies. The content is provided in 6 languages (8 in updated versions and SD cards). English, Spanish, French, German, Dutch, Chinese, Italian, Portuguese. More info is available at [timio.co](https://timio.co/).
 
-To change the language you need to remove the disk and hold the language selection button. This is great until you realise it's the first thing a toddler will do. So my son ends up listening to nursery rhymes in a language he has no idea about and loses interest in is new toy. I wondered if I could modify the Timio to only made some languages available.
+To change the language you need to remove the disk and hold the language selection button. This is great until you realise it's the first thing a toddler will do. So [chrisduffer](https://github.com/chrisduffer)'s son ends up listening to nursery rhymes in a language he has no idea about and loses interest in the new toy. He wondered if you could modify the Timio to only make some languages available.
 
 ## SD Card
-Content is not actually stored on the disks. Swapping the disk just changes the content selection stored on the device. There is an SD card in the battery compartment containing the content. The instructions make it clear to not remove or modify so obviously I pulled it out and stuck it in a computer. This is what I found.
+Content is not actually stored on the disks. Swapping the disk just changes the content selection stored on the device. There is an SD card in the battery compartment containing the content. The instructions make it clear to not remove or modify so obviously we pulled them out and stuck them into computers. This is what was found.
 
 * The card provided is a Sandisk Class 4 8GB card. 
 * The content is only around 170MB (>250MB on more recent SD card versions).
@@ -83,7 +83,7 @@ These are the language IDs:
 ```
 
 ## Content
-When changing the language the, the Timio will announce the one selected. I assumed this came from the L00 directory, but after ~~breaking~~ modifying the directory structure, it seems to come from one of the LXXYYYYY.a18 files.
+When changing the language the, the Timio will announce the one selected. Initially assumed this came from the L00 directory, but after ~~breaking~~ modifying the directory structure, it seems to come from one of the LXXYYYYY.a18 files.
 
 All languages contain the same set of content ID files named using their language ID prefix.
 
@@ -525,17 +525,17 @@ L0*20S12.a18
 </details>
 
 ## Modifying Languages
-My aim was to remove the languages that I don't want to use that the moment so that's where I started.
+First aim was to remove the languages that [chrisduffer](https://github.com/chrisduffer) didn't want to use that the moment so that's where he started.
 
-*Take a backup before doing anything and do not modify the included card* I doubt the manufacturer will be happy when you ask for a replacement.
-I backed up my files and used a new SD card formatted for FAT32 for testing. I initially copied all the files over and tested it still worked in the Timio.
+*Take a backup before doing anything and do not modify the included card* It's doubtful the manufacturer will be happy when you ask for a replacement.
+We backed up all files and used a new SD card formatted for FAT32 for testing. Initially copying all the files over and tested it still worked in the Timio.
 
 ## Removing Languages
 Since the file naming has been identified, we can replace the languages we don't want, with one we do. In these cases I kept the L00 directory untouched.
 
 ### To replace all with English
 With SD mounted to E:\ and backup of the Timio files in C:\temp\timio
-```
+```cmd
 robocopy e: C:\temp\timio /E
 ```
 Replace all languages with English files
@@ -568,8 +568,8 @@ foreach ($id in (2, 4, 6, 8)) {
 ```
 
 ## Next Steps
-* [x] ~~I have no idea what format the .a18 are. I'd like to find this out and see if content can be modified.~~
+* [x] ~~We have no idea what format the .a18 are. Would like to find this out and see if content can be modified.~~
     * [X] TIMIO will indeed play a different sound, when a new `.a18` is copied into a `L0X/` directory and renamed to replace an existing file (e.g.: making the Tamborine icon on Instruments disc play the Tuba sound, making an entire language play the same sound for all button presses by replacing the data content of all files in an `LOX/` directory). 👍
     * [ ] Verify that new, custom sounds be encoded as `.a18`  using GeneralPlus G+ Gadget tools.
-* [ ] I'd like work out how the content ID is linked to the disks. 
+* [ ] Would like work out how the content ID is linked to the disks.
 * [ ] Can L0X directories be removed or added?

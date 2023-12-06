@@ -572,4 +572,8 @@ foreach ($id in (2, 4, 6, 8)) {
     * [X] TIMIO will indeed play a different sound, when a new `.a18` is copied into a `L0X/` directory and renamed to replace an existing file (e.g.: making the Tamborine icon on Instruments disc play the Tuba sound, making an entire language play the same sound for all button presses by replacing the data content of all files in an `LOX/` directory). 👍
     * [ ] Verify that new, custom sounds be encoded as `.a18`  using GeneralPlus G+ Gadget tools.
 * [ ] Would like work out how the content ID is linked to the disks.
+    * TIMIO uses GeneralPlus "Magic ID" conductive system to identify discs. `/L00/data.bin` blob likely contains disc id to SD card path logic.
+        * Physical disk design (PDF): [Magic ID Design Guide(AN0198)](doc/AN0198-Magic_ID_Design_Guide-16.pdf)
+        * Partial m'nSP2.0 module for ghidra decompiler: [SamuelWAnderson45/ghidra-unSP](https://github.com/SamuelWAnderson45/ghidra-unSP)
 * [ ] Can L0X directories be removed or added?
+

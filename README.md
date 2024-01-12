@@ -24,6 +24,8 @@ Content is not actually stored on the disks. Swapping the disk just changes the 
 * All other files on the card are `.a18` sound data files. The audio data format is a GeneralPlus "`a1800`" encoding specialized for playback on these chips.
     * `.a18` format audio can be produced via the GeneralPlus [G+ Gadget developer tools](https://web.archive.org/web/20231205035201/https://www.generalplus.com/1LVlangLNx3SVq9SNservice_n_support_d) Audio Batch Converter.
 
+* The latest version of the SD card contents can be downloaded from [Timio's FAQ page](https://web.archive.org/web/20240112172530/https://timio.co/pages/timio-language-files-update)
+
 ## Directory structure
 At the top level there are up to 9 directories (depending on SD card version):
 ```
